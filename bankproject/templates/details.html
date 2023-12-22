@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body style="background-color:aqua;">
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;text-align:center; background-color:orange;  font-size:40px;">Details Verification</h5>
+        <div class="form-outline mb-4" style="table-align:center;font-size:30px; background-color:aqua; ">
+<center>
+  <div class="container">
+          <table>
+            <tr>
+              <td><label>Name</label></td>
+              <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td><label>DOB</label></td>
+              <td><input type="date" name="dob"></td>
+            </tr>
+            <tr>
+              <td><label>Age</label></td>
+              <td><input type="number" name="age"></td>
+            </tr>
+
+              <tr>
+              <td><label>Gender</label></td>
+              <td>Male<input type="radio" name="gender" value="male">
+              Female<input type="radio" name="gender" value="female">
+              Transgender<input type="radio" name="gender" value="transgender"></td>
+            </tr>
+            <tr>
+              <td><label>Mobilenumber</label></td>
+              <td><input type="number" name="mobilenumber"></td>
+            </tr>
+              <tr>
+              <td><label>Email</label></td>
+              <td><input type="email" name="email"></td>
+            </tr>
+             <tr>
+              <td><label>Address</label></td>
+               <td><textarea name="address" name="address"></textarea></td>
+                </tr>
+        <tr>
+           <td><label for="subject">District</label></td>
+          <td><select name="subject" id="subject">
+    <option value="" selected="selected">Select District</option>
+  </select>
+    <br/>
+
+        </td>
+        </tr>
+                          <tr>
+           <td><label for="topic">Branch</label></td>
+          <td><select name="topic" id="topic">
+    <option value="" selected="selected">Select Branch</option>
+  </select>
+    <br/>
+
+        </td>
+        </tr>
+
+     <tr>
+              <td><label>Account Type</label></td>
+              <td><select name="account" name="account" class="account-dropdown">
+              <option value="">--choose account type--</option>
+                <option value="savings">Savings Account</option>
+                <option value="current">Current Account</option>
+              </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Materials needs</label></td>
+              <td>
+              <input type="checkbox" name="materials" value="Chequebook">
+              <label>Check book</label>
+              <input type="checkbox" name="materials" value="debitcard">
+              <label>Debit card</label>
+              <input type="checkbox" name="materials" value="creditcard">
+                <label>Credit card</label>
+            </td>
+            </tr>
+          <tr>
+            <td>
+             <button onclick="myFunction()" >submit</button>   <button type="submit">Logout</button>
+                <table id="demo"></table>
+
+           <div style="text-align:center;font-size:20px;">
+            <label><a href="{% url 'bankapp:home' %}">Click here go to home</a></label>
+        </div>
+
+
+            </td>
+
+          </tr>
+          </table>
+    </div>
+  </center>
+
+</div>
+    </form>
+<center>{% for msg in messages %}
+{{msg}}
+    {% endfor %}
+</center>
+<script>
+var subjectObject = {
+  "KASARGOD": {
+    "Kanjagad": ["Links", "Images", "Tables", "Lists"],
+    "Neeleshwaram": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Ranipuram": ["Variables", "Operators", "Functions", "Conditions"],
+  },
+  "KANNUR": {
+    "Thalaseery": ["Variables", "Strings", "Arrays"],
+    "Payyanoor": ["SELECT", "UPDATE", "DELETE"],
+    "Dharmadom": ["SELECT", "UPDATE", "DELETE"],
+  },
+    "WAYANAD": {
+    "Sulthanbathery": ["Variables", "Strings", "Arrays"],
+    "Vythiri": ["SELECT", "UPDATE", "DELETE"],
+    "Thirunnelli": ["SELECT", "UPDATE", "DELETE"],
+  },
+    "KOZHIKOD": {
+    "Kappad": ["Variables", "Strings", "Arrays"],
+    "Thali": ["SELECT", "UPDATE", "DELETE"],
+    "Beppur": ["SELECT", "UPDATE", "DELETE"],
+  },
+    "MALAPURAM": {
+    "Edappal": ["Variables", "Strings", "Arrays"],
+    "Changaramkulam": ["SELECT", "UPDATE", "DELETE"],
+    "Ponnani": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "PALAKKAD": {
+    "Ottapalam": ["Variables", "Strings", "Arrays"],
+    "Chalissery": ["SELECT", "UPDATE", "DELETE"],
+    "Melamuri": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "THRISSUR": {
+    "Kunnamkulam": ["Variables", "Strings", "Arrays"],
+    "Kodungaloor": ["SELECT", "UPDATE", "DELETE"],
+    "Guruvayoor": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "ERNAMKULAM": {
+    "Vytila": ["Variables", "Strings", "Arrays"],
+    "Angamali": ["SELECT", "UPDATE", "DELETE"],
+    "Kakkanad": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "ALAPUZHA": {
+    "Cherthala": ["Variables", "Strings", "Arrays"],
+    "Aroor": ["SELECT", "UPDATE", "DELETE"],
+    "Haripad": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "IDUKKI": {
+    "Munnar": ["Variables", "Strings", "Arrays"],
+    "Kattappana": ["SELECT", "UPDATE", "DELETE"],
+    "Mattupetti": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "KOTTAYAM": {
+    "Pala": ["Variables", "Strings", "Arrays"],
+    "Vykom": ["SELECT", "UPDATE", "DELETE"],
+    "Puthuppalli": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "KOLLAM": {
+    "Karunagappilly": ["Variables", "Strings", "Arrays"],
+    "Chavara": ["SELECT", "UPDATE", "DELETE"],
+    "Kundara": ["SELECT", "UPDATE", "DELETE"],
+  },
+      "PATHANAMTHITTA": {
+    "Thiruvalla": ["Variables", "Strings", "Arrays"],
+    "Adoor": ["SELECT", "UPDATE", "DELETE"],
+    "Erumeli": ["SELECT", "UPDATE", "DELETE"],
+  },
+   "THIRUVANATHAPURAM": {
+    "Thambanoor": ["Variables", "Strings", "Arrays"],
+    "Nemam": ["SELECT", "UPDATE", "DELETE"],
+    "Venjaramood": ["SELECT", "UPDATE", "DELETE"],
+  },
+
+}
+
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+
+
+}
+    function myFunction() {
+  alert("Successfully completed");
+}
+
+</script>
+
+
+</html>

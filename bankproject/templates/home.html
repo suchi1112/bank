@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<div>
+    <img class="my_image my_image_padding" src="{% static 'img/MTF BANK.png' %}" alt="our products" width="1500px" height="1000px">
+</div>
+    <li>
+
+    <div class="text-right">
+        <a href="{% url 'bankapp:log' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">>>>>></a>
+    </div>
+    </li>
+{% endblock %}
+
